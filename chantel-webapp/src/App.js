@@ -8,7 +8,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios("http://0.0.0.0:8080/date")
+    axios("http://api.chantel.sandbox/date")
         .then((response) => {
             console.log(response.data)
           setDate(response.data.message);

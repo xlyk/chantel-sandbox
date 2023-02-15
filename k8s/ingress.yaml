@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chantel-ingress
+  namespace: sandbox
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: api.chantel.sandbox
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: chantel-api
+                port:
+                  number: 8080
+            path: /
+    - host: app.chantel.sandbox
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: chantel-webapp
+                port:
+                  number: 80
+            path: /

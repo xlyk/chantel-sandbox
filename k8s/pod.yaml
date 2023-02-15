@@ -1,0 +1,23 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: chantel-api
+# spec:   
+#   containers:
+#   - name:  chantel-api
+#     image: chantel-api-sandbox_api:latest
+#     imagePullPolicy: Never # only necessary when running k8s locally 
+#     ports:
+#     - containerPort: 8080
+---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: chantel-webapp
+# spec:   
+#   containers:
+#   - name:  chantel-webapp
+#     image: chantel-api-sandbox_webapp:latest
+#     imagePullPolicy: Never # only necessary when running k8s locally 
+#     ports:
+#     - containerPort: 80 

@@ -1,4 +1,4 @@
-module chantel-api
+module nginx
 
 go 1.19
 

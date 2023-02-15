@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chantel-api-deployment
+  labels:
+    app: chantel-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chantel-api
+  template:
+    metadata:
+      labels:
+        app: chantel-api
+    spec:
+      containers:
+      - name: chantel-api
+        imagePullPolicy: Never
+        image: chantel-sandbox_api:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chantel-webapp-deployment
+  labels:
+    app: chantel-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chantel-webapp
+  template:
+    metadata:
+      labels:
+        app: chantel-webapp
+    spec:
+      containers:
+      - name: chantel-webapp
+        imagePullPolicy: Never
+        image: chantel-sandbox_webapp:latest
+        ports:
+        - containerPort: 80
