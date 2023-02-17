@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+      - "1234:1234"
   webapp:
     build:
       context: ./chantel-webapp
